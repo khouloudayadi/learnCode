@@ -1,0 +1,15 @@
+version: '3'
+services:
+  app:
+    container_name: docker-learncode
+    restart: always
+    build: .
+    ports:
+      - '80:3000' 
+    links:
+      - mlab
+  mlab:
+    container_name: mlab
+    image: mongo-express
+    ports:
+      - '27017:27017'
